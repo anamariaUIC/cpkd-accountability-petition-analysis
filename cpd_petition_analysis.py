@@ -98,22 +98,6 @@ html, body, div, p, span, button, label, input,
     background: #f0ede8; border-radius: 4px; padding: 1px 6px;
 }
 
-/* Timeline */
-.tl-wrap { position: relative; padding-left: 24px; }
-.tl-wrap::before {
-    content: ''; position: absolute; left: 8px; top: 6px; bottom: 0;
-    width: 2px; background: #e5e3de;
-}
-.tl-item { position: relative; margin-bottom: 1.1rem; }
-.tl-dot {
-    position: absolute; left: -20px; top: 5px;
-    width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff;
-    box-shadow: 0 0 0 2px currentColor;
-}
-.tl-date { font-size: 10px; font-weight: 600; color: #888780; text-transform: uppercase; letter-spacing: .5px; margin: 0 0 2px; }
-.tl-event { font-size: 13.5px; font-weight: 500; color: #1a1a18; margin: 0 0 2px; }
-.tl-detail { font-size: 12px; color: #5F5E5A; margin: 0; line-height: 1.5; }
-
 /* Intensity */
 .intensity-wrap { margin-top: 0.5rem; }
 .irow { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
@@ -326,47 +310,6 @@ with geo_col2:
         yaxis=dict(showgrid=False, tickfont=dict(size=11.5), autorange="reversed"),
     )
     st.plotly_chart(fig_geo, use_container_width=True)
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ACCOUNTABILITY CHRONOLOGY
-# ══════════════════════════════════════════════════════════════════════════════
-st.markdown('<p class="sec-header">Accountability chronology — how we got here</p>', unsafe_allow_html=True)
-st.markdown("""<p class="sec-sub">
-A pattern of unannounced decisions, missing public process, and punitive responses to community engagement.
-</p>""", unsafe_allow_html=True)
-
-timeline_items = [
-    (BLUE,   "Fall 2025",       "Parking gates installed at Rainbow Beach — no public forum",
-     "Multiple residents note the gates appeared \"out of nowhere,\" with no notice to the Park Advisory Council or community."),
-    (AMBER,  "Fall 2025",       "Pay-to-park fee system activated",
-     "App-only payment system introduced; residents with disabilities, seniors, and those without smartphones face disproportionate barriers."),
-    (RED,    "Late 2025",       "No disclosure of where fee revenue is directed",
-     "Despite repeated questions, CPD does not publish how parking revenue is allocated or what projects it funds in the community."),
-    (PURPLE, "Late 2025",       "Community member applies for ComEd solar grant on behalf of Rainbow Beach",
-     "A volunteer PAC member submits a grant application intended to benefit the park and community."),
-    (CORAL,  "Late 2025 / Early 2026", "PAC member suspended from Rainbow Beach Advisory Council",
-     "Suspension issued without prior notice, clear written rationale, or transparent process — citing rules not previously applied to others."),
-    (GREEN,  "January 2026",    "Public petition launched — 271 signatures in the first month",
-     "Community backlash crystallizes. Residents begin documenting concerns about gates, fees, and CPD governance publicly."),
-    (TEAL,   "March 2026",      "Second wave of signatures — 253 in a single month",
-     "Renewed momentum following additional CPD decisions. Media coverage and CBS interview pitch around Rainbow Beach parking gate story."),
-    (TEAL,   "May 2026",        "923 total signers, 272 comments — petition remains active",
-     "Signatures continue to grow. The petition has become a documented record of resident grievance and a tool for civic accountability."),
-]
-
-tl_html = '<div class="tl-wrap">'
-for color, date, event, detail in timeline_items:
-    tl_html += f"""
-    <div class="tl-item">
-      <div class="tl-dot" style="background:{color};color:{color}"></div>
-      <p class="tl-date">{date}</p>
-      <p class="tl-event">{event}</p>
-      <p class="tl-detail">{detail}</p>
-    </div>"""
-tl_html += "</div>"
-st.markdown(tl_html, unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
