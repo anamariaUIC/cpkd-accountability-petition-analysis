@@ -307,15 +307,16 @@ with col_opp:
         textinfo="none",
         hovertemplate="%{label}: %{value} (%{percent})<extra></extra>",
     ))
+    opp_layout = base_layout(height=210)
+    opp_layout["margin"] = dict(l=0, r=0, t=10, b=0)
     fig_opp.update_layout(
-        **base_layout(height=210),
+        **opp_layout,
         showlegend=False,
         annotations=[dict(
-            text='<b style="font-size:22px">99.6%</b><br><span style="font-size:11px;color:#888">supportive</span>',
+            text='<b>99.6%</b><br>supportive',
             x=0.5, y=0.5, showarrow=False, align="center",
-            font=dict(family="DM Sans", color="#1a1a18"),
+            font=dict(family="DM Sans", size=16, color="#1a1a18"),
         )],
-        margin=dict(l=0, r=0, t=10, b=0),
     )
     st.plotly_chart(fig_opp, use_container_width=True)
 
