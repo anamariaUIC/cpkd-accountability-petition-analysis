@@ -149,7 +149,7 @@ st.markdown("""
 </h1>
 <p style="font-size:12px;color:#888780;margin-bottom:1.4rem">
     Analysis of 923 petition signers and 272 resident comments &nbsp;·&nbsp;
-    Data source: public petition submitted to the Chicago Park District &nbsp;·&nbsp;
+    Data source: <a href="https://actionnetwork.org/petitions/petition-for-accountability-at-the-chicago-park-district?source=direct_link&" target="_blank" style="color:#888780;text-decoration:underline;">public petition on the subject of Chicago Park District accountability</a> &nbsp;·&nbsp;
     January – May 2026
 </p>
 """, unsafe_allow_html=True)
